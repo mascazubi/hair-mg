@@ -132,6 +132,12 @@ header{
   background-size: cover;
   background-repeat: no-repeat;
 }
+.hero-contact {
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/contact-hero.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .nav-wrap {
   display: flex;
   align-items: center;
@@ -167,7 +173,8 @@ nav {
   background-color: var(--accent-color);
   z-index: 2;
   box-shadow: 0px 6px 16px -7px #00000085;
-
+}
+.hide {
   display: none;
 }
 .nav-links {
@@ -191,7 +198,7 @@ nav {
   transition: background-color var(--speed) ease;
 }
 .nav-link:hover {
-  background-color: var(--accent-color-light);
+  background-color: var(--accent-color-dark);
 }
 .nav-links li {
   width: 100%;
@@ -302,6 +309,7 @@ p.item-cost {
 .artist-img{
 width: 327px;
 height: 266px;
+margin-bottom: .5em;
 }
 .artist:nth-of-type(odd) .artist-img {
   width: 327px;
