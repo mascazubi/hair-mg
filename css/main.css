@@ -25,6 +25,7 @@
   --accent-color: hsl(316, 52%, 50%);
   --accent-color-light: hsl(316, 41%, 63%);
   --accent-color-dark: hsl(316, 51%, 42%);
+  --accent-gradient: hsla(316, 51%, 29%, 0.6), rgba(95, 30, 78, 0.6);
 
   --speed: 300ms;
 }
@@ -253,19 +254,19 @@ padding-block: 1em;
   text-align: center;
 }
 .haircuts {
-  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/services.png);
+  background: linear-gradient(var(--accent-gradient)), url(/img/services.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .styling {
-  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/services.png);
+  background: linear-gradient(var(--accent-gradient)), url(/img/services.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .coloring {
-  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/services.png);
+  background: linear-gradient(var(--accent-gradient)), url(/img/services.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -286,18 +287,67 @@ p.item-cost {
 .description {
   margin-block: 0.5em;
 }
-
+.artists {
+  display: flex;
+  flex-direction: column;
+}
+.artist {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+.artist:nth-of-type(odd) {
+  align-items: end;
+}
+.artist-img{
+width: 327px;
+height: 266px;
+}
+.artist:nth-of-type(odd) .artist-img {
+  width: 327px;
+  height: 266px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 139px 100px 0px 139px;
+}
+.artist:nth-of-type(even) .artist-img  {
+  width: 327px;
+  height: 266px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 100px 139px 139px 0px;
+}
+p.artist-name, p.artist-pos {
+  margin-block: 0;
+  margin-inline: 6px;
+}
+.artist:nth-of-type(odd) .artist-name, .artist:nth-of-type(odd) .artist-pos {
+  text-align: right;
+}
+.artist:nth-of-type(even) .artist-name, .artist:nth-of-type(even) .artist-pos {
+  text-align: left;
+}
+.mj {
+  background: url(/img/mj.png);
+}
+.verde {
+  background: url(/img/verde.png);
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
 
 .container {
   margin-inline: auto;
-  width: clamp(340px, 50vw, 1380px);
+  width: clamp(385px, 90vw, 1920px);
 }
 .container-sm {
   margin-inline: auto;
-  width: clamp(340px, 90vw, 1920px);
+  width: clamp(385px, 60vw, 1380px);
 }
 .font-lg {
   font-size: var(--font-lg);
