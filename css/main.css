@@ -20,7 +20,7 @@
   --font-color-light: #fff;
   --font-lg: 2.25em;
   --font-md: 1.5em;
-  --font-sm: 0.5em;
+  --font-sm: 1em;
 
   --accent-color: hsl(316, 52%, 50%);
   --accent-color-light: hsl(316, 41%, 63%);
@@ -35,6 +35,9 @@ html {
   line-height: 1.4;
 }
 
+a {
+  font-size: var(--font-sm);
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -112,7 +115,6 @@ header{
   color: var(--font-color-light);
   background-color: var(--accent-color);
   width: 100%;
-
 }
 .hero-home {
   background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/home-hero.png);
@@ -148,6 +150,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 1em;
 }
 .logo {
   font-size: 1.5em;
@@ -155,6 +158,7 @@ header{
   text-decoration: none;
   color: var(--font-color-light);
   padding-block: 0.5em;
+  white-space: nowrap;
 }
 .mobile-nav-toggle {
   border: 0;
@@ -172,7 +176,7 @@ nav {
   justify-content: center;
   align-items: center;
   margin: auto;
-  top: 3.5em;
+  top: 5em;
   left: 0;
   right: 0;
   width: 100vw;
@@ -202,6 +206,7 @@ nav {
   display: block;
   background-color: inherit;
   transition: background-color var(--speed) ease;
+  white-space: nowrap;
 }
 .nav-link:hover {
   background-color: var(--accent-color-dark);
@@ -233,7 +238,7 @@ main {
   width: 100%;
 }
 p {
-  max-width: 75ch;
+  font-size: var(--font-sm);
 }
 .block p {
   margin-inline: auto;
@@ -242,16 +247,36 @@ p {
   padding: 1em 2em;
   border-radius: 100vw;
 }
+.btn-cta-sm {
+  display: none;
+}
 .btn-appt {
   padding: 1.5em 0;
   position: fixed;
   bottom:0;
   width: 100vw;
   text-align: center;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .arrow-right{
-
+  margin-inline: .5em;
+  line-height: 0;
+  display: inline-block;
+  transition: transform var(--speed) ease;
+}
+.btn-cta:hover > .arrow-right {
+  transform: translateX(8px);
+}
+.scissors {
+  line-height: 0;
+  font-size: 1.6em;
+  margin-left: .5em;
+  transition: transform var(--speed) ease;
+}
+.btn-appt:hover > .scissors {
+  transform: translate(2px, -2px) rotate(-45deg);
 }
 .arrow-down{
 
@@ -266,6 +291,7 @@ padding-block: 1em;
 .service-name {
   color: var(--font-color-light);
   text-align: center;
+  font-size: var(--font-md);
 }
 .haircuts {
   background: linear-gradient(var(--accent-gradient)), url(/img/services.png);
@@ -313,16 +339,14 @@ p.item-cost {
   margin-bottom: 2em;
 }
 .artist:nth-of-type(odd) {
-  align-items: end;
+  align-self: end;
 }
 .artist-img{
-width: 327px;
-height: 266px;
-margin-bottom: .5em;
-}
-.artist:nth-of-type(odd) .artist-img {
   width: 327px;
   height: 266px;
+  margin-bottom: .5em;
+}
+.artist:nth-of-type(odd) .artist-img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -330,8 +354,6 @@ margin-bottom: .5em;
   border-radius: 139px 100px 0px 139px;
 }
 .artist:nth-of-type(even) .artist-img  {
-  width: 327px;
-  height: 266px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -354,6 +376,106 @@ p.artist-name, p.artist-pos {
 .verde {
   background: url(/img/verde.png);
 }
+
+@media screen and (min-width: 50em) {
+  :root {
+    --font-lg: min(5vw, 4.2em);
+    --font-md: min(3vw, 2.2em);
+    --font-sm: min(2vw, 1.2em);
+  }
+  body {
+    padding-bottom: 8em;
+  }
+  .hero-content {
+    height: 600px;
+  }
+  .artist-img{
+    width: 388px;
+    height: 324px;
+    margin-bottom: .5em;
+  }
+  .artist:nth-of-type(even) {
+    text-align:left;
+    align-self: end;
+  }
+  .artist:nth-of-type(odd) {
+    align-self: start;
+    text-align: right;
+  }
+  .artist:nth-of-type(odd) .artist-name, .artist:nth-of-type(odd) .artist-pos {
+    text-align: right;
+  }
+  .artist:nth-of-type(even) .artist-name, .artist:nth-of-type(even) .artist-pos {
+    text-align: left;
+  }
+  .artist:nth-of-type(odd) .artist-img {
+    border-radius: 139px 100px 0px 139px;
+  }
+  .artist:nth-of-type(even) .artist-img  {
+    border-radius: 100px 139px 139px 0px;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  
+  .btn-appt {
+    display: none;
+  }
+  .nav-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    z-index: 2;
+    background-color: transparent;
+    position: relative;
+    box-shadow: none;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+  .mobile-nav-toggle {
+    display: none;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  .nav-link {
+    font-weight: 300;
+  }
+  .nav-link:hover {
+    background-color: transparent
+  }
+  .nav-links li {
+    width: auto;
+    margin-inline: 1.5em;
+  }
+  .btn-cta-sm {
+    padding: .7em 1em;
+    border-radius: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-cta-sm:hover > .scissors {
+    transform: translate(2px, -2px) rotate(-45deg);
+  }
+}
+@media screen and (min-width: 82em) {
+  
+  .artist:nth-of-type(even) {
+    margin-top: -238px;
+  }
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -364,7 +486,7 @@ p.artist-name, p.artist-pos {
 }
 .container-sm {
   margin-inline: auto;
-  width: clamp(360px, 60vw, 1380px);
+  width: clamp(360px, 60vw, 800px);
 }
 .font-lg {
   font-size: var(--font-lg);
@@ -382,10 +504,10 @@ p.artist-name, p.artist-pos {
   display: none;
 }
 .block {
-  margin-top:62px;
+  margin-block:62px;
 }
 .block-sm {
-  margin-top:42px;
+  margin-block:40px;
 }
 .text-center {
   text-align: center;
@@ -404,6 +526,15 @@ p.artist-name, p.artist-pos {
 }
 .btn:hover {
   background-color: var(--accent-color-dark);
+}
+
+@media screen and (min-width: 50em) {
+  .block {
+    margin-block:124px;
+  }
+  .block-sm {
+    margin-block:56px;
+  }
 }
 
 /*
