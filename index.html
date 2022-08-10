@@ -1,42 +1,75 @@
 <!doctype html>
     <html" lang="en">
-        <head>
-            <meta charset="utf-8">
-            <title>Hair by Miss MJ</title>
-            <meta name="description" content="">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <title>Hair by Miss MJ</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <meta property="og:title" content="">
-            <meta property="og:type" content="">
-            <meta property="og:url" content="">
-            <meta property="og:image" content="">
+        <meta property="og:title" content="">
+        <meta property="og:type" content="">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
 
-            <link rel="manifest" href="site.webmanifest">
-            <link rel="apple-touch-icon" href="icon.png">
-            <!-- Place favicon.ico in the root directory -->
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet"> 
+        
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/main.css">
 
-            <link rel="stylesheet" href="css/normalize.css">
-            <link rel="stylesheet" href="css/main.css">
+        <meta name="theme-color" content="#C23E9E">
+    </head>
 
-            <meta name="theme-color" content="#fafafa">
-        </head>
-
-        <body>
-            
-
-
-            <!-- 
-            <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-            <script src="js/plugins.js"></script>
-            <script src="js/main.js"></script> -->
-
-            <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-            <!-- <script>
-                window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-                ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-            </script>
-            <script src="https://www.google-analytics.com/analytics.js" async></script> -->
-
-        </body>
+    <body>
+        <header class="hero-home">
+            <div class="container nav-wrap">
+                <a href="/" class="logo">Hair by Miss MJ</a>
+                <button class="mobile-nav-toggle" aria-controls="primaru-navigation">
+                    <svg class="toggle-open" viewBox="0 0 80 80" width="30" height="20">
+                        <rect class="bar" width="900" height="10"></rect>
+                        <rect class="bar" y="30" width="60" height="10"></rect>
+                        <rect class="bar" y="60" width="30" height="10""></rect>
+                    </svg>
+                    <svg class="toggle-close" viewBox="0 0 80 80" width="30" height="20">
+                        <rect width="80" height="15"></rect>
+                        <rect y="30" width="80" height="15"></rect>
+                        <rect y="60" width="80" height="15""></rect>
+                    </svg>
+                    <span class="sr-only">Menu</span>
+                </button>
+                <nav id="primary-navigation">
+                    <ul class="nav-links">
+                        <li><a class="nav-link" href="/">Home</a></li>
+                        <li><a class="nav-link" href="/services">Services</a></li>
+                        <li><a class="nav-link" href="/about">About</a></li>
+                        <li><a class="nav-link" href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hero-content container text-center">
+                <h1 class="font-lg">Look & Feel Beautiful</h1>
+                <p class="font-md">The Best Service. The Best Styles.</p>
+                <a href="/services" class="btn btn-cta">See our Services<span class="arrow-right"></span></a>
+            </div>
+        
+        </header>
+        
+        <main>
+            <div class="container block text-center">
+                <h2 class="font-md accent-text">✨ Shine like a star ✨</h2>
+                <p>We create flattering, contemporary looks for our guests, specializing in versatile styles for everyday life. Whether you want something fashion forward, timeless, or just for a special event, Hair by Miss MJ has your answer.</p>
+            </div>
+            <div class="container block text-center">
+                <h2 class="font-md accent-text">A Full Service Experience</h2>
+                <p>We believe that you are your best accessory. This is why we offer a full service experience including hair styling, nail treatments, and makeup services.</p>
+            </div>
+            <div class="container arrow"></div>
+            <button class="btn btn-appt">Book an Appointment</button>
+        </main>
+    </body>
 
     </html>
