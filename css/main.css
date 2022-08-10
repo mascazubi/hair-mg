@@ -138,6 +138,12 @@ header{
   background-size: cover;
   background-repeat: no-repeat;
 }
+.hero-book {
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/book-hero.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .nav-wrap {
   display: flex;
   align-items: center;
@@ -235,13 +241,14 @@ p {
 .btn-cta {
   padding: 1em 2em;
   border-radius: 100vw;
-  text-decoration: none;
 }
 .btn-appt {
-  padding: 1.5em 3em;
+  padding: 1.5em 0;
   position: fixed;
   bottom:0;
-  width: 100%;
+  width: 100vw;
+  text-align: center;
+
 }
 .arrow-right{
 
@@ -290,6 +297,8 @@ p.item-cost {
   margin-inline: 0;
   font-weight: 700;
   margin-block: 0.5em;
+  color: var(--accent-color);
+  font-size: 1.1em;
 }
 .description {
   margin-block: 0.5em;
@@ -351,11 +360,11 @@ p.artist-name, p.artist-pos {
 
 .container {
   margin-inline: auto;
-  width: clamp(385px, 90vw, 1920px);
+  width: clamp(360px, 90vw, 1920px);
 }
 .container-sm {
   margin-inline: auto;
-  width: clamp(385px, 60vw, 1380px);
+  width: clamp(360px, 60vw, 1380px);
 }
 .font-lg {
   font-size: var(--font-lg);
@@ -390,6 +399,8 @@ p.artist-name, p.artist-pos {
   border: none;
   cursor: pointer;
   transition: background-color var(--speed) ease;
+  font-weight: 500;
+  text-decoration: none;
 }
 .btn:hover {
   background-color: var(--accent-color-dark);

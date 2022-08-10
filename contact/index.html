@@ -18,10 +18,14 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet"> 
         
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        
         <link rel="stylesheet" href="/css/normalize.css">
         <link rel="stylesheet" href="/css/main.css">
 
         <meta name="theme-color" content="#C23E9E">
+
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
     </head>
 
     <body>
@@ -47,6 +51,7 @@
                         <li><a class="nav-link" href="/services">Services</a></li>
                         <li><a class="nav-link" href="/about">About</a></li>
                         <li><a class="nav-link" href="/contact">Contact</a></li>
+                        <li><a class="nav-link" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hairbymj?primary_color=c23d9e'});return false;">Book</a></li>
                     </ul>
                 </nav>
             </div>
@@ -58,9 +63,10 @@
         
         <main>
             <div class="container-sm block text-center">
-                Form
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeJF2sWFSm0gAZeUiDwH1HL2tIExnTeY33jg_bszokP6chUgg/viewform?embedded=true" width="100%" height="850px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
-            
+            <div class="container arrow"></div>
+            <a class="btn btn-appt" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hairbymj?primary_color=c23d9e'});return false;">Book an Appointment</a>
         </main>
     </body>
 
