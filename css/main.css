@@ -23,8 +23,8 @@
   --font-sm: 1em;
 
   --accent-color: hsl(316, 52%, 50%);
-  --accent-color-light: hsl(316, 41%, 63%);
-  --accent-color-dark: hsl(316, 51%, 42%);
+  --accent-color-light: hsl(316, 52%, 70%);
+  --accent-color-dark: hsl(316, 52%, 40%);
   --accent-gradient: hsla(316, 51%, 29%, 0.6), rgba(95, 30, 78, 0.6);
 
   --speed: 300ms;
@@ -107,14 +107,13 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-body {
-  padding-bottom: 4em;
-}
 header{
   color: var(--font-color-light);
   background-color: var(--accent-color);
-  width: 100%;
+  width: 100vw;
+}
+.hero {
+  box-shadow: inset 0 -10px 20px -10px #000000b3;
 }
 .hero-home {
   background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/home-hero.png);
@@ -150,7 +149,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 1em;
+  padding-top: .5em;
 }
 .logo {
   font-size: 1.5em;
@@ -170,29 +169,33 @@ header{
   fill:white;
 }
 nav {
-  position: absolute;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
-  top: 5em;
+  top: 4.5em;
   left: 0;
   right: 0;
-  width: 100vw;
+  width: 90vw;
   background-color: var(--accent-color);
   z-index: 2;
-  box-shadow: 0px 6px 16px -7px #00000085;
+  box-shadow: 0px 3px 16px 4px #00000045;
+  border: 1px solid var(--accent-color-dark);
+  border-radius: 6px;
 }
-.hide {
+.primary-navigation {
   display: none;
+}
+.opened {
+  position: absolute;
+  display: flex;
 }
 .nav-links {
   list-style: none;
   list-style-type: none;
   width: 100%;
   padding: 0;
-  margin: 0;
+  margin:0;
 }
 .nav-link {
   text-decoration: none;
@@ -201,7 +204,7 @@ nav {
   font-size: 1.25em;
   text-align: center;
   margin-inline: auto;
-  padding: 1em 0;
+  padding: 2em 0;
   width: 100%;
   display: block;
   background-color: inherit;
@@ -246,25 +249,34 @@ p {
 .btn-cta {
   padding: 1em 2em;
   border-radius: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btn-cta-sm {
   display: none;
 }
 .btn-appt {
   padding: 1.5em 0;
-  position: fixed;
-  bottom:0;
-  width: 100vw;
+  position: sticky;
+  bottom:15px;
+  margin-inline: auto;
+  width: 90vw;
+  max-width: 350px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 3;
+  border-radius: 100vw;
+  box-shadow: 0px 0px 20px 1px #0000002e;
 }
 .arrow-right{
-  margin-inline: .5em;
-  line-height: 0;
-  display: inline-block;
+  margin-left: .6em;
+  margin-top: -2px;
+  display: block;
   transition: transform var(--speed) ease;
+
 }
 .btn-cta:hover > .arrow-right {
   transform: translateX(8px);
@@ -274,6 +286,8 @@ p {
   font-size: 1.6em;
   margin-left: .5em;
   transition: transform var(--speed) ease;
+  display: block;
+  margin-top: -2px;
 }
 .btn-appt:hover > .scissors {
   transform: translate(2px, -2px) rotate(-45deg);
@@ -360,6 +374,9 @@ p.item-cost {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 100px 139px 139px 0px;
 }
+.artist-name {
+  color: var(--accent-color);
+}
 p.artist-name, p.artist-pos {
   margin-block: 0;
   margin-inline: 6px;
@@ -376,18 +393,40 @@ p.artist-name, p.artist-pos {
 .verde {
   background: url(/img/verde.png);
 }
+footer {
+  padding: 2em 0 4em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+}
+.socials {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2em;
 
+}
+.social {
+  width: 2em;
+  aspect-ratio: 1/1;
+}
+.insta {
+  fill:var(--accent-color);
+}
+.copyright {
+  color: gray;
+}
 @media screen and (min-width: 50em) {
   :root {
     --font-lg: min(5vw, 4.2em);
     --font-md: min(3vw, 2.2em);
     --font-sm: min(2vw, 1.2em);
   }
-  body {
-    padding-bottom: 8em;
-  }
   .hero-content {
-    height: 600px;
+    height: 500px;
   }
   .artist-img{
     width: 388px;
@@ -426,8 +465,10 @@ p.artist-name, p.artist-pos {
     justify-content: space-between;
     align-items: center;
   }
-  nav {
+  .primary-navigation {
     display: flex;
+  }
+  nav {
     justify-content: center;
     align-items: center;
     margin: 0;
@@ -440,6 +481,7 @@ p.artist-name, p.artist-pos {
     left: 0;
     right: 0;
     width: auto;
+    border: none;
   }
   .mobile-nav-toggle {
     display: none;
@@ -450,9 +492,11 @@ p.artist-name, p.artist-pos {
   }
   .nav-link {
     font-weight: 300;
+    transition: all var(--speed) ease;
   }
-  .nav-link:hover {
-    background-color: transparent
+  .nav-link:not(.btn-cta-sm):hover {
+    background-color: transparent;
+    color: var(--accent-color-light);
   }
   .nav-links li {
     width: auto;
