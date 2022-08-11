@@ -18,14 +18,14 @@
 
   --font-color-dark: #222;
   --font-color-light: #fff;
-  --font-lg: 2.25em;
+  --font-lg: 3em;
   --font-md: 1.5em;
   --font-sm: 1em;
 
-  --accent-color: hsl(316, 52%, 50%);
-  --accent-color-light: hsl(316, 52%, 70%);
-  --accent-color-dark: hsl(316, 52%, 40%);
-  --accent-gradient: hsla(316, 51%, 29%, 0.6), rgba(95, 30, 78, 0.6);
+  --accent-color: hsl(316, 52%, 65%);
+  --accent-color-light: hsl(316, 52%, 80%);
+  --accent-color-dark: hsl(316, 52%, 50%);
+  --accent-gradient: hsla(316, 51%, 29%, 0.50), rgba(95, 30, 78, 0.55);
 
   --speed: 300ms;
 }
@@ -116,25 +116,25 @@ header{
   box-shadow: inset 0 -10px 20px -10px #000000b3;
 }
 .hero-home {
-  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/home-hero.png);
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/home-hero.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .hero-services {
-  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/services-hero.png);
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/services-hero.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .hero-about {
-  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/about-hero.png);
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/about-hero.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .hero-contact {
-  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/contact-hero.png);
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .4)), url(/img/contact-hero.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -222,7 +222,9 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  padding-top: 2em;
+  padding-bottom: 3.5em;
+  min-height: 275px;
 }
 header h1 {
   margin-bottom: 0;
@@ -308,19 +310,19 @@ padding-block: 1em;
   font-size: var(--font-md);
 }
 .haircuts {
-  background: linear-gradient(var(--accent-gradient)), url(/img/services.png);
+  background: linear-gradient(var(--accent-gradient)), url(/img/services.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .styling {
-  background: linear-gradient(var(--accent-gradient)), url(/img/services.png);
+  background: linear-gradient(var(--accent-gradient)), url(/img/services.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .coloring {
-  background: linear-gradient(var(--accent-gradient)), url(/img/services.png);
+  background: linear-gradient(var(--accent-gradient)), url(/img/services.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -421,12 +423,12 @@ footer {
 }
 @media screen and (min-width: 50em) {
   :root {
-    --font-lg: min(5vw, 4.2em);
-    --font-md: min(3vw, 2.2em);
-    --font-sm: min(2vw, 1.2em);
+    --font-lg: min(6vw, 4.5em);
+    --font-md: min(3vw, 2.5em);
+    --font-sm: min(2vw, 1.5em);
   }
   .hero-content {
-    height: 500px;
+    min-height: 450px;
   }
   .artist-img{
     width: 388px;
