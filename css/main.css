@@ -20,7 +20,7 @@
   --font-color-light: #fff;
   --font-lg: 3em;
   --font-md: 1.5em;
-  --font-sm: 1em;
+  --font-sm: 1.15em;
 
   --accent-color: hsl(316, 52%, 65%);
   --accent-color-light: hsl(316, 52%, 80%);
@@ -152,12 +152,31 @@ header{
   padding-top: .5em;
 }
 .logo {
-  font-size: 1.5em;
+  font-size: var(--font-md);
   z-index: 3;
   text-decoration: none;
   color: var(--font-color-light);
-  padding-block: 0.5em;
+  padding: 0.5em 0 0.15em 0;
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: var(--accent-color);
+  opacity: 1;
+  transform: translate3d(-100%, 0, 0);
+  transition: all var(--speed);
+}
+.logo:hover::after,
+.logo:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 .mobile-nav-toggle {
   border: 0;
@@ -204,15 +223,31 @@ nav {
   font-size: 1.25em;
   text-align: center;
   margin-inline: auto;
-  padding: 2em 0;
+  padding: 0.5em 0;
   width: 100%;
   display: block;
   background-color: inherit;
-  transition: background-color var(--speed) ease;
+  transition: all var(--speed) ease;
   white-space: nowrap;
+  position: relative;
+  overflow: hidden;
 }
-.nav-link:hover {
-  background-color: var(--accent-color-dark);
+.nav-link:not(.btn):after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: var(--accent-color);
+  opacity: 1;
+  transform: translate3d(-100%, 0, 0);
+  transition: all var(--speed);
+}
+.nav-link:hover::after,
+.nav-link:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 .nav-links li {
   width: 100%;
@@ -331,6 +366,7 @@ padding-block: 1em;
   display: flex;
   align-items:baseline;
   justify-content: space-between;
+  font-size: var(--font-sm);
 }
 .item-name {
   margin-block: .5em;
@@ -340,7 +376,6 @@ p.item-cost {
   font-weight: 700;
   margin-block: 0.5em;
   color: var(--accent-color);
-  font-size: 1.1em;
 }
 .description {
   margin-block: 0.5em;
@@ -425,7 +460,7 @@ footer {
   :root {
     --font-lg: min(6vw, 4.5em);
     --font-md: min(3vw, 2.5em);
-    --font-sm: min(2vw, 1.5em);
+    --font-sm: 1.3em;
   }
   .hero-content {
     min-height: 450px;
@@ -498,7 +533,6 @@ footer {
   }
   .nav-link:not(.btn-cta-sm):hover {
     background-color: transparent;
-    color: var(--accent-color-light);
   }
   .nav-links li {
     width: auto;
