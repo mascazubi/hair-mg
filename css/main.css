@@ -501,6 +501,9 @@ footer {
   .btn-appt {
     display: none;
   }
+  .btn-cta-nav .scissors {
+    display: block;
+  }
   .nav-wrap {
     display: flex;
     justify-content: space-between;
