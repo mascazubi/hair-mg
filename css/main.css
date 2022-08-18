@@ -117,30 +117,22 @@ header{
 }
 .hero {
   box-shadow: inset 0 -10px 20px -10px #000000b3;
+  background: var(--hero-bg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .hero-home {
-  background: var(--hero-gradient), url(/img/home-hero.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  --hero-bg: var(--hero-gradient), url(/img/home-hero.jpg);
 }
 .hero-services {
-  background: var(--hero-gradient), url(/img/services-hero.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  --hero-bg: var(--hero-gradient), url(/img/services-hero.jpg);
 }
 .hero-about {
-  background: var(--hero-gradient), url(/img/about-hero.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  --hero-bg: var(--hero-gradient), url(/img/about-hero.jpg);
 }
 .hero-contact {
-  background: var(--hero-gradient), url(/img/contact-hero.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  --hero-bg: var(--hero-gradient), url(/img/contact-hero.jpg);
 }
 .nav-wrap {
   display: flex;
