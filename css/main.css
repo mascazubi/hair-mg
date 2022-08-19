@@ -33,8 +33,7 @@
   --accent-color-light: hsl(var(--accent-h), var(--accent-s), 90%);
   --accent-color-dark: hsl(var(--accent-h), var(--accent-s), 70%);
   
-  --hero-gradient: linear-gradient(hsla(var(--accent-h), var(--accent-s), 5%, 45%), hsla(var(--accent-h), var(--accent-s), 5%, 65%));
-  --accent-gradient: hsla(var(--accent-h), var(--accent-s), 30%, 35%), hsla(var(--accent-h), var(--accent-s), 10%, 65%);
+  --hero-gradient: linear-gradient(hsla(var(--accent-h), var(--accent-s), 1%, 40%), hsla(var(--accent-h), var(--accent-s), 4%, 70%));
 
   --speed: 300ms;
 }
@@ -279,9 +278,6 @@ main {
 p {
   font-size: var(--font-sm);
 }
-/* .block p {
-  margin-inline: auto;
-} */
 .btn-cta {
   padding: 1em 2em;
   border-radius: 100vw;
@@ -347,24 +343,6 @@ p {
   text-align: center;
   font-size: var(--font-md);
 }
-/* .haircuts {
-  background: linear-gradient(var(--accent-gradient)), url(/img/services.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.styling {
-  background: linear-gradient(var(--accent-gradient)), url(/img/services.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.coloring {
-  background: linear-gradient(var(--accent-gradient)), url(/img/services.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
 .item-header {
   display: flex;
   align-items:baseline;
