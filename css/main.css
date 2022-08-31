@@ -434,7 +434,7 @@ footer {
 
 }
 .social {
-  width: 2em;
+  width: clamp(30px, 2vw + 1em, 40px);
   aspect-ratio: 1/1;
 }
 .insta {
